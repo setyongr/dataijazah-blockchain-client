@@ -1,4 +1,6 @@
-# dataijazah-client
+# Data Ijazah client
+
+A Simple client that https://github.com/setyongr/blockchain to save school certificate in blockchain
 
 ## Project setup
 ```
