@@ -3,7 +3,7 @@
     <v-navigation-drawer v-if="isHostSet" v-model="drawer" :clipped="$vuetify.breakpoint.lgAndUp" app>
       <v-list dense>
         <v-row align="center">
-            <v-col cols="6 ma-3">
+            <v-col cols="6" class="ma-3">
               <h2>Host: {{ host }}</h2>
             </v-col>
           </v-row>
@@ -37,7 +37,7 @@
               </v-list-item-content>
             </v-list-item>
           </v-list-group>
-          <v-list-item v-else :key="item.text" link>
+          <v-list-item v-else :key="item.text" :to="item.to">
             <v-list-item-action>
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-item-action>
@@ -83,10 +83,10 @@ export default {
     dialog: false,
     drawer: null,
     items: [
-      { icon: "mdi-contacts", text: "Input" },
-      { icon: "mdi-history", text: "Data" },
-      { icon: "mdi-history", text: "Pool" },
-      { icon: "mdi-history", text: "Host" }
+      { icon: "mdi-plus-box", text: "Input", to: "/input"},
+      { icon: "mdi-contacts", text: "Data", to:"/data"},
+      { icon: "mdi-database", text: "Pool", to:"/pool" },
+      { icon: "mdi-server", text: "Node Host", to:"/host" }
     ],
     host: "",
   }),

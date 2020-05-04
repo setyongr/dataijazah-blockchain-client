@@ -1,18 +1,21 @@
 <template>
   <v-container>
-    <v-row align="center" justify="center">
-      <v-col cols="4">
-        <h2>Selamat Datang</h2>
-      </v-col>
+    <v-row class="ma-5">
+      <h1>Selamat Datang</h1>
+    </v-row>
+    <v-row class="ma-5">
+      <h3>Anda terkoneksi ke {{ host }}</h3>
     </v-row>
   </v-container>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
+  name: "HelloWorld",
+  computed: {
+    host() {
+      return this.$store.state.host
+    }
   }
-}
+};
 </script>
